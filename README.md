@@ -2,6 +2,7 @@
 
 <p align="center">
   <strong>Hide data in plain sight.</strong>
+  <img src="https://github.com/user-attachments/assets/626f89a5-d5f6-49dd-8633-8b719a55ba88">
 </p>
 
 <p align="center">
