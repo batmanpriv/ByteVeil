@@ -15,7 +15,7 @@
     <img src="https://img.shields.io/badge/version-1.0.0-blue.svg" alt="Version">
   </a>
   <a href="https://go.dev/">
-    <img src="https://img.shields.io/badge/Go-1.20%2B-00ADD8.svg" alt="Go">
+    <img src="https://img.shields.io/badge/Go-1.25%2B-00ADD8.svg" alt="Go">
   </a>
   <a href="https://github.com/batmanpriv/ByteVeil">
     <img src="https://img.shields.io/github/stars/batmanpriv/ByteVeil?style=flat" alt="GitHub Stars">
