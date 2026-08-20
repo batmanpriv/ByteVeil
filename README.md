@@ -149,19 +149,19 @@ cd ByteVeil
 Build the binary:
 
 ```bash
-go build -o byteveil .
+go build -o ByteVeil .
 ```
 
 Run it:
 
 ```bash
-./byteveil
+./ByteVeil
 ```
 
 On Windows:
 
 ```powershell
-go build -o byteveil.exe .
+go build -o ByteVeil.exe .
 ```
 
 ---
@@ -189,7 +189,7 @@ Depending on your Go environment and platform, the installed binary directory ma
 ## Hide a file inside an image
 
 ```bash
-byteveil encode \
+ByteVeil encode \
   -in cover.png \
   -out secret.png \
   -data secret.pdf
@@ -200,7 +200,7 @@ This creates `secret.png` containing the hidden `secret.pdf`.
 Extract it with:
 
 ```bash
-byteveil decode \
+ByteVeil decode \
   -in secret.png \
   -out extracted.pdf
 ```
@@ -210,7 +210,7 @@ byteveil decode \
 ## Hide a text message
 
 ```bash
-byteveil encode \
+ByteVeil encode \
   -in cover.jpg \
   -out message.jpg \
   -text "Meet me at 9pm."
@@ -219,7 +219,7 @@ byteveil encode \
 Extract the message:
 
 ```bash
-byteveil decode \
+ByteVeil decode \
   -in message.jpg
 ```
 
@@ -236,7 +236,7 @@ message.txt
 ## Hide a file with encryption
 
 ```bash
-byteveil encode \
+ByteVeil encode \
   -in cover.png \
   -out secret.png \
   -data secret.pdf \
@@ -246,7 +246,7 @@ byteveil encode \
 Extract it using the same password:
 
 ```bash
-byteveil decode \
+ByteVeil decode \
   -in secret.png \
   -out secret.pdf \
   -password "correct horse battery staple"
@@ -261,7 +261,7 @@ Without the correct password, the encrypted payload cannot be decrypted.
 ByteVeil can accept a directory as the payload.
 
 ```bash
-byteveil encode \
+ByteVeil encode \
   -in cover.png \
   -out backup.png \
   -data ./my-folder \
@@ -275,7 +275,7 @@ ByteVeil stores the directory name as metadata and marks the payload as a direct
 Extract it:
 
 ```bash
-byteveil decode \
+ByteVeil decode \
   -in backup.png \
   -out ./restored-folder \
   -password "my-password"
@@ -303,7 +303,7 @@ The `encode` command creates a stego file containing a hidden payload.
 ### Syntax
 
 ```bash
-byteveil encode \
+ByteVeil encode \
   -in <cover-file> \
   -out <output-file> \
   (-data <file-or-folder> | -text <message>) \
@@ -327,7 +327,7 @@ Exactly one of `-data` or `-text` must be supplied.
 File:
 
 ```bash
-byteveil encode \
+ByteVeil encode \
   -in cover.jpg \
   -out output.jpg \
   -data document.pdf
@@ -336,7 +336,7 @@ byteveil encode \
 Text:
 
 ```bash
-byteveil encode \
+ByteVeil encode \
   -in cover.jpg \
   -out output.jpg \
   -text "This is a hidden message."
@@ -345,7 +345,7 @@ byteveil encode \
 Encrypted file:
 
 ```bash
-byteveil encode \
+ByteVeil encode \
   -in cover.png \
   -out output.png \
   -data secret.zip \
@@ -355,7 +355,7 @@ byteveil encode \
 Encrypted directory:
 
 ```bash
-byteveil encode \
+ByteVeil encode \
   -in cover.png \
   -out output.png \
   -data ./project \
@@ -371,7 +371,7 @@ The `decode` command extracts the hidden payload.
 ### Syntax
 
 ```bash
-byteveil decode \
+ByteVeil decode \
   -in <stego-file> \
   [-out <output>] \
   [-password <password>]
@@ -392,14 +392,14 @@ For directory payloads, the extracted data is restored as a directory.
 ### Examples
 
 ```bash
-byteveil decode \
+ByteVeil decode \
   -in output.png
 ```
 
 Specify an output file:
 
 ```bash
-byteveil decode \
+ByteVeil decode \
   -in output.png \
   -out restored.pdf
 ```
@@ -407,7 +407,7 @@ byteveil decode \
 Encrypted payload:
 
 ```bash
-byteveil decode \
+ByteVeil decode \
   -in output.png \
   -out restored.pdf \
   -password "strong-password"
@@ -416,7 +416,7 @@ byteveil decode \
 Directory:
 
 ```bash
-byteveil decode \
+ByteVeil decode \
   -in backup.png \
   -out ./restored \
   -password "strong-password"
@@ -665,7 +665,7 @@ Anyone who knows how ByteVeil stores its payload can potentially extract the dat
 For sensitive information, always use encryption:
 
 ```bash
-byteveil encode \
+ByteVeil encode \
   -in cover.png \
   -out secret.png \
   -data secret.pdf \
@@ -854,7 +854,7 @@ This is a fundamental limitation of file-level embedding rather than a bug speci
 ## Hide a PDF in a PNG
 
 ```bash
-byteveil encode \
+ByteVeil encode \
   -in photo.png \
   -out photo-secret.png \
   -data document.pdf \
@@ -864,7 +864,7 @@ byteveil encode \
 Extract:
 
 ```bash
-byteveil decode \
+ByteVeil decode \
   -in photo-secret.png \
   -out document.pdf \
   -password "my-secret"
@@ -875,7 +875,7 @@ byteveil decode \
 ## Hide a message in a JPEG
 
 ```bash
-byteveil encode \
+ByteVeil encode \
   -in photo.jpg \
   -out photo-hidden.jpg \
   -text "Nothing to see here."
@@ -884,7 +884,7 @@ byteveil encode \
 Extract:
 
 ```bash
-byteveil decode \
+ByteVeil decode \
   -in photo-hidden.jpg
 ```
 
@@ -893,7 +893,7 @@ byteveil decode \
 ## Hide a project directory
 
 ```bash
-byteveil encode \
+ByteVeil encode \
   -in cover.png \
   -out project.png \
   -data ./my-project \
@@ -903,7 +903,7 @@ byteveil encode \
 Restore:
 
 ```bash
-byteveil decode \
+ByteVeil decode \
   -in project.png \
   -out ./restored-project \
   -password "project-password"
@@ -914,7 +914,7 @@ byteveil decode \
 ## Hide a ZIP archive
 
 ```bash
-byteveil encode \
+ByteVeil encode \
   -in image.png \
   -out image-with-data.png \
   -data archive.zip
