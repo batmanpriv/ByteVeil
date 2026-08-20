@@ -20,6 +20,18 @@
   <a href="https://github.com/batmanpriv/ByteVeil">
     <img src="https://img.shields.io/github/stars/batmanpriv/ByteVeil?style=flat" alt="GitHub Stars">
   </a>
+  <a href="https://github.com/topics/steganography">
+    <img src="https://img.shields.io/badge/Topic-Steganography-purple.svg" alt="Steganography">
+  </a>
+  <a href="https://github.com/topics/golang">
+    <img src="https://img.shields.io/badge/Topic-Go-00ADD8.svg" alt="Go Topic">
+  </a>
+  <a href="https://github.com/topics/encryption">
+    <img src="https://img.shields.io/badge/Topic-Encryption-red.svg" alt="Encryption">
+  </a>
+  <a href="https://github.com/batmanpriv/ByteVeil/blob/main/LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License">
+  </a>
 </p>
 
 ---
